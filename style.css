@@ -6,6 +6,15 @@ body {
   margin: 0;
   font-family: sans-serif;
 }
+/* Make board container responsive */
+#board {
+  display: grid;
+  grid-template-columns: repeat(8, 1fr);
+  width: 100%;
+  max-width: 90vmin; /* Keeps it square-ish */
+  margin: 20px auto;
+  aspect-ratio: 1 / 1; /* Keeps it square */
+}
 
 div * {
   padding: 0;
@@ -27,6 +36,8 @@ div * {
   padding: 5px 0 0 0;
   background: #fff;
   transition: .85s linear;
+  font-size: 4vmin;
+  margin-top: 1em;
 }
 
 .turnhighlight {
@@ -67,6 +78,11 @@ div * {
   padding: 0 0 0 6px;
   cursor: pointer;
   z-index: 1;
+  aspect-ratio: 1 / 1;
+  font-size: 4vmin;
+  text-align: center;
+  vertical-align: middle;
+  line-height: 1;
 }
 
 .gamecell:hover {
