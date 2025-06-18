@@ -2,12 +2,16 @@
 <html lang="en" >
 <head>
   <meta charset="UTF-8">
-  <title>Chess Puzzle</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>B'day Chess Puzzle</title>
   <link rel="stylesheet" href="./style.css">
+  <link href="https://fonts.googleapis.com/css2?family=Berkshire+Swash&display=swap" rel="stylesheet">
   <script src="https://cdn.jsdelivr.net/npm/canvas-confetti@1.5.1/dist/confetti.browser.min.js"></script>
 </head>
 <body>
 <!-- partial:index.partial.html -->
+<h1 id="puzzleTitle">♟️ Checkmate in one move to reveal!</h1>
+
 
   <div id="game">
     <div class='cellprefix'>8</div>
@@ -91,7 +95,7 @@
     <div class='cellprefix'>f</div>
     <div class='cellprefix'>g</div>
     <div class='cellprefix'>h</div><br>
-    <div id='turn'>It's Whites Turn!</div>
+    <div id='turn'> White to Play and Win!</div>
   </div>
   <div></div>
   
@@ -99,6 +103,31 @@
   <div id="hintbox" style="display:none; padding:10px; background:#fff3cd; border:1px solid #ffeeba; margin-top:10px;">
   💡 Hint: The Queen does it all!
 </div>
+
+  <div id="balloon-container"></div>
+
+  <div id="birthdayCard" style="display: none;">
+  <div class="card" id="messageCard">
+    <h1 class="birthday-heading">🎉 Happiest 21st Birthday Rounak!✨</h1>
+    <div>
+      <p></p>
+      <p>So here’s to every checkmate you’ve achieved — and all the victories ahead</p>
+      <p>Keep glowing (just like your name) & growing and most importantly, keep being the humble person you are.</p>
+      <p>Naam roshan karte raho!</p>
+      <p>Wishing you an amazing life ahead of making brilliant moves, taking risks, and not getting forked!😆</p>
+      <button class="cut-cake-btn" onclick="showPhotoCard()">Click(🎁)</button>
+  </div>
+</div>
+
+<div class="card" id="photoCard" style="display: none;">
+    <h1 class="birthday-heading">Stay Blessed!😂 </h1>
+    <img src="./image/Rounak.jpg" class="photo-final" alt="Rounak Photo">
+    <p>"For the wonderful developer who creates magic, this is a tiny tribute"</p>
+  </div>
+</div>
+
+
+
    <audio id="birthday-audio" src="./audio/birthday.mp3" preload="auto"></audio>
 
 
