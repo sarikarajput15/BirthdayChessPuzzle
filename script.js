@@ -754,7 +754,7 @@ function showWin() {
     origin: { y: 0.6 }
   });
 
-  alert("🎉 Congratulations Birthday boy!");
+  alert("🎉 Brilliant Birthday boy!");
 
   setTimeout(() => {
     if (confirm("Did you notice something? Ofcourse nahi 😂 so... Click to view!")) {
@@ -764,7 +764,7 @@ function showWin() {
 }
 
 function showMiss() {
-  alert("❌ Uffo Missed!! Try again💁‍♀️: Focus🎯");
+  alert("❌ Missed!! Try again💁‍♀️: Focus🎯");
   document.getElementById("hintbox").style.display = "block";
 
 // Show the retry button
