@@ -754,7 +754,7 @@ function showWin() {
     origin: { y: 0.6 }
   });
 
-  alert("🎉 Brilliant Birthday boy!");
+  alert("🎉 Brilliant! Birthday boy!");
 
   setTimeout(() => {
     if (confirm("Did you notice something? Ofcourse nahi 😂 so... Click to view!")) {
