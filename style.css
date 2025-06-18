@@ -12,7 +12,7 @@ body {
   grid-template-columns: repeat(8, 1fr);
   width: 100%;
   max-width: 90vmin; /* Keeps it square-ish */
-  margin: 20px auto;
+  margin: 0 auto;
   aspect-ratio: 1 / 1; /* Keeps it square */
 }
 
@@ -80,9 +80,8 @@ div * {
   z-index: 1;
   aspect-ratio: 1 / 1;
   font-size: 4vmin;
-  text-align: center;
-  vertical-align: middle;
-  line-height: 1;
+  display: flex;
+  justify-content: center;
 }
 
 .gamecell:hover {
