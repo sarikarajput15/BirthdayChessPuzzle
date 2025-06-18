@@ -631,7 +631,6 @@ let main = {
         // set the selected piece to '' again
         main.variables.selectedpiece = '';
 
-        $('#turn').html("It's Blacks Turn");
 
         $('#turn').addClass('turnhighlight');
         window.setTimeout(function(){
@@ -647,7 +646,7 @@ let main = {
         // set the selected piece to '' again
         main.variables.selectedpiece = '';
 
-        $('#turn').html("It's Whites Turn");
+        $('#turn').html("White To Play and Win");
 
         $('#turn').addClass('turnhighlight');
         window.setTimeout(function(){
@@ -704,7 +703,6 @@ let piece = $('#' + from).attr('chess');
 // Puzzle logic: Qxh6# is the only winning move
 if (piece === 'w_queen' && to === '8_6') {
   main.methods.capture(target); // Qxh6 is a capture
-  main.methods.endturn();
   showWin(); // 🎉 celebration
 } else {
   main.methods.move(target); // normal move
@@ -719,7 +717,6 @@ if (piece === 'w_queen' && to === '8_6') {
         // capture
         if (selectedpiece.name === 'w_queen' && target.id === '8_6') {
         main.methods.capture(target);
-        main.methods.endturn();
         showWin();
         } else {
         main.methods.capture(target);
@@ -754,7 +751,7 @@ function showWin() {
     origin: { y: 0.6 }
   });
 
-  alert("🎉 Brilliant! Birthday boy!");
+  alert("🎉 Brilliant!");
 
   setTimeout(() => {
     if (confirm("Did you notice something? Ofcourse nahi 😂 so... Click to view!")) {
@@ -802,8 +799,44 @@ function highlight21() {
     audio.play().catch(err => {
       console.warn("Audio playback blocked:", err);
     });
+} 
+
+setTimeout(() => {
+  document.getElementById("birthdayCard").style.display = "flex";
+  releaseBalloons(20);
+}, 2000);
+
+  // Show the animated birthday message
+  setTimeout(() => {
+    document.getElementById("birthdayCard").style.display = "flex";
+  }, 2000);
+
 }
+
+function releaseBalloons(count = 15) {
+  const container = document.getElementById("balloon-container");
+
+  for (let i = 0; i < count; i++) {
+    const balloon = document.createElement("div");
+    balloon.className = "balloon";
+
+    // Random horizontal position
+    balloon.style.left = `${Math.random() * 100}%`;
+    balloon.style.animationDuration = `${6 + Math.random() * 5}s`;
+    balloon.style.background = `radial-gradient(circle at 30% 30%, ${randomPastel()}, #ff4081)`;
+
+    container.appendChild(balloon);
+
+    // Remove after animation
+    setTimeout(() => container.removeChild(balloon), 11000);
+  }
 }
+
+function randomPastel() {
+  const colors = ['#ff8a80', '#ffd180', '#ffff8d', '#c8e6c9', '#80d8ff', '#ea80fc'];
+  return colors[Math.floor(Math.random() * colors.length)];
+}
+
 
 function resetPuzzle() {
   main.variables.turn = 'w';
@@ -821,7 +854,7 @@ function resetPuzzle() {
   // Re-draw pieces
   main.methods.gamesetup();
 
-  $('#turn').html("It's Whites Turn!");
+  $('#turn').html("White to Play and win!");
 }
 
 document.body.addEventListener("click", function enableAudio() {
@@ -836,3 +869,11 @@ document.body.addEventListener("click", function enableAudio() {
     });
   }
 });
+
+function showPhotoCard() {
+  const msg = document.getElementById("messageCard");
+  const photo = document.getElementById("photoCard");
+
+  msg.style.display = "none";
+  photo.style.display = "block";
+}
