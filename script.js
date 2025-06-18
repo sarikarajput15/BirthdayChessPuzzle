@@ -764,7 +764,7 @@ function showWin() {
 }
 
 function showMiss() {
-  alert("❌ Missed!! Try again💁‍♀️: Focus🎯");
+  alert("❌ Just Missed!! Try again💁‍♀️: Focus🎯");
   document.getElementById("hintbox").style.display = "block";
 
 // Show the retry button
